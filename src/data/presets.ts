@@ -1,0 +1,58 @@
+import { PromptPreset } from '@/types/playground';
+
+export const PROMPT_PRESETS: PromptPreset[] = [
+  {
+    id: 'deep-reasoner',
+    title: '🧠 Deep Chain-of-Thought Reasoner',
+    description: 'Thorough multi-step logical deduction with step-by-step thinking.',
+    category: 'Reasoning',
+    systemPrompt: 'You are an advanced reasoning model. When given a problem or question, think rigorously step-by-step, evaluate hypotheses, check for edge cases and contradictions, and then provide a clear, justified conclusion.',
+    userPrompt: 'A farmer is traveling with a wolf, a goat, and a cabbage. He needs to cross a river in a small boat that can only hold himself and one other item. If left alone, the wolf will eat the goat, and the goat will eat the cabbage. How can he cross the river safely? Detail each step and why it avoids danger.',
+    temperature: 0.3,
+  },
+  {
+    id: 'code-architect',
+    title: '⚡ Elite Full-Stack Systems Architect',
+    description: 'Generates clean, modular, production-ready TypeScript code with tests.',
+    category: 'Coding',
+    systemPrompt: 'You are a staff software engineer and systems architect. Write strictly typed, production-ready code with complete error handling, zero placeholders, and explanations of performance characteristics.',
+    userPrompt: 'Write a high-performance in-memory LRU cache in TypeScript with O(1) get and put operations, support for TTL (time to live), and event emitters for eviction.',
+    temperature: 0.2,
+  },
+  {
+    id: 'json-extractor',
+    title: '📊 Structured JSON Data Extractor',
+    description: 'Extracts entities and structured data with strict schema compliance.',
+    category: 'Analysis',
+    systemPrompt: 'You are a data extraction engine. You always respond strictly in valid JSON adhering to schema requirements without commentary or markdown codeblocks.',
+    userPrompt: 'Extract all people, companies, financial amounts, and scheduled dates from this text: "On March 14, 2026, CFO Sarah Jenkins confirmed that Apex Innovations finalized an acquisition of CloudMatrix for $42.5 million in cash and stock, with full closing slated for Q3."',
+    temperature: 0.1,
+  },
+  {
+    id: 'creative-worldbuilder',
+    title: '🌌 Sci-Fi Cyberpunk Worldbuilder',
+    description: 'Immersive narrative fiction and atmosphere creation.',
+    category: 'Creative',
+    systemPrompt: 'You are a master cyberpunk and speculative fiction novelist. Use evocative, atmospheric prose with tactile sensory details, vivid character voices, and subtle worldbuilding.',
+    userPrompt: 'Describe a rainy midnight in Neo-Kyoto year 2099, where an underground neural-cyberware technician receives an anonymous data chip with forbidden AI blueprints.',
+    temperature: 0.85,
+  },
+  {
+    id: 'bug-hunter',
+    title: '🐞 Security Auditor & Bug Hunter',
+    description: 'Reviews code for security vulnerabilities, memory leaks, and race conditions.',
+    category: 'Coding',
+    systemPrompt: 'You are an elite application security auditor. Carefully inspect provided code snippets for OWASP Top 10 vulnerabilities, race conditions, memory leaks, and unsafe assumptions. Format findings with Severity, Vulnerability, Attack Vector, and Remediated Code.',
+    userPrompt: 'Audit this authentication handler for vulnerabilities:\n\nasync function handleLogin(req, res) {\n  const { username, password } = req.body;\n  const user = await db.query(`SELECT * FROM users WHERE username = \'${username}\' AND password = \'${password}\'`);\n  if (user) {\n    res.json({ token: user.id });\n  } else {\n    res.status(401).send("Invalid credentials");\n  }\n}',
+    temperature: 0.1,
+  },
+  {
+    id: 'executive-summary',
+    title: '📈 Executive Brief & Synthesis',
+    description: 'Distills complex documents into high-signal takeaways for leadership.',
+    category: 'Productivity',
+    systemPrompt: 'You are a chief of staff advising Fortune 500 executives. Synthesize complex topics into structured, high-signal briefs with Key Takeaways, Strategic Implications, Risks, and Recommended Next Steps.',
+    userPrompt: 'Analyze the impact of custom inference chips (like Groq LPUs) on real-time agentic AI workflows, comparing latency, throughput, and operational costs against traditional GPUs.',
+    temperature: 0.4,
+  },
+];
